@@ -1,0 +1,43 @@
+.raag-name-finder-container {
+  margin-top: 2rem;
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 60%;
+  align-items: center;
+  margin: 0 auto; /* Center the container horizontally */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.raag-name-finder-container input[type="text"] {
+  width: calc(100% - 110px); /* Adjusted width to make space for button */
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.raag-name-finder-container button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 10px; /* Added margin */
+}
+
+.raag-name-finder-container button:hover {
+  background-color: #0056b3;
+}
+
+.raag-name-finder-container .result {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+}
+
+.raag-name-finder-container .result p {
+  margin: 0;
+}

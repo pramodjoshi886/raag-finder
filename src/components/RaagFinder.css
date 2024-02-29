@@ -1,0 +1,162 @@
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+  }
+  
+  header h1 {
+    margin: 0;
+    font-size: 2rem;
+  }
+  
+  /* Navigation Styles */
+  nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  nav ul li {
+    display: inline;
+  }
+  
+  nav ul li button {
+    background-color: transparent;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  nav ul li button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  
+  nav ul li.active button {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+  
+  /* Page Section Styles */
+  .page-section {
+    padding: 2rem;
+  }
+  
+  /* Note Selector Styles */
+  .notes-selector {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem; /* Add margin-top for separation */
+  }
+  
+  .notes-container {
+    display: flex;
+    flex-wrap: wrap;
+  }  
+  
+  .note {
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    margin: 0.5rem;
+    padding: 0.5rem;
+    cursor: pointer;
+  }
+  
+  .note.selected {
+    background-color: #007bff;
+    color: #fff;
+  }
+
+  .search-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 1rem;
+    transition: background-color 0.3s ease; /* Smooth transition */
+  }
+  
+  .search-button:hover {
+    background-color: #0056b3;
+  }
+
+  .clear-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+    transition: background-color 0.3s ease; /* Smooth transition */
+  }
+  
+  .clear-button:hover {
+    background-color: #0056b3;
+  }
+
+  .container {
+    text-align: center;
+}
+
+.center {
+    text-align: center;
+}
+
+.page-section {
+    padding: 2rem;
+}
+
+.notes-selector {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.notes-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.aaroha, .avaroh {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.aaroha h3, .avaroh h3 {
+    margin-top: 0;
+}
+
+.search-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 1rem;
+    transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.search-button:hover {
+    background-color: #0056b3;
+}
+
+.note {
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    margin: 0.5rem;
+    padding: 0.5rem;
+    cursor: pointer;
+}
+
+.note.selected {
+    background-color: #007bff;
+    color: #fff;
+}
