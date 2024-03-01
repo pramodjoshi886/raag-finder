@@ -40,13 +40,19 @@ function RaagaFinder() {
             if (selectedNotesAvaroh.includes(note)) {
                 setSelectedNotesAvaroh(selectedNotesAvaroh.filter(n => n !== note));
             } else {
-                setSelectedNotesAvaroh(prevNotes => {
-                    const lastIndex = lastSelectedAvaroh ? allNotes.indexOf(lastSelectedAvaroh) : -1;
-                    let newNotes = [...prevNotes];
-                    newNotes.splice(lastIndex + 1, 0, note);
-                    setLastSelectedAvaroh(note);
-                    return newNotes;
-                });
+                let temp = [...selectedNotesAvaroh]
+                // For sorting in future, needs to be tested properly
+
+                // let revArr = [...allNotes]
+                // revArr = revArr.reverse()
+                // const currIndex = revArr.indexOf(note);
+                // if(currIndex < revArr.indexOf(temp[temp.length-1])) {
+                //     temp.splice(currIndex+1, 0, note)
+                // }else {
+                //     temp.push(note)
+                // }
+                temp.push(note)
+                setSelectedNotesAvaroh(temp)
             }
         }
     };
@@ -114,7 +120,6 @@ function RaagaFinder() {
                                 </div>
                             </div>
                         </div>
-                        {selectedNotesAvaroh.map((note)=><p>{note}</p>)}
                         <div className="button-group">
                             <button className='search-button' onClick={searchByAarohaAvaroh}>Search</button>
                             <button className='clear-button' onClick={clearSelection}>Clear</button>
