@@ -15,6 +15,7 @@ function SearchBySwar(aaroh, avaroh) {
             // console.log(raag)
             return raag;
         } else {
+            return null;
             // console.log(raag.aaroha.toString(), aaroh.toString())
             // console.log(raag.avaroh.toString(), avaroh.toString())
         }
