@@ -27,19 +27,18 @@ const SwarFinder = () => {
     <div>
       <Autocomplete
         disablePortal
+        sx={{ marginBottom: '10px' }}
         options={raagas}
         id='find-raag-autocomplete'
         value={inputValue}
         onChange={(event, newValue) => {
           setValue(newValue);
-          // console.log(newValue);
         }}
         fullWidth
-        // getOptionLabel={(option) => option.name}
 
         renderInput={(params) => <TextField {...params} label="Raagas" />}
       />
-      <Button onClick={findRaag}>Search</Button>
+      <Button variant="contained" onClick={findRaag}>Search</Button>
       <div className="result">
         {result}
       </div>
