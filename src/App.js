@@ -1,11 +1,14 @@
 import logo from './logo.svg';
 import './App.css';
 import RaagaFinder from './components/RaagFinder';
-
+import { useEffect } from 'react';
 function App() {
+  useEffect(() => {
+    document.title = "Raag Finder";
+  }, []);
   return (
     <div >
-      <RaagaFinder/>
+      <RaagaFinder />
     </div>
   );
 }
