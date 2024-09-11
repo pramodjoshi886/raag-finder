@@ -74,7 +74,7 @@ function RaagaFinder() {
         <div className="container">
             <header>
                 <h1>Know Your Raaga</h1>
-                <Tabs centered textColor="white"
+                <Tabs centered textColor="inherit"
                     value={activePageId}
                     onChange={(event, newValue) => {
                         setActivePageId(newValue)
