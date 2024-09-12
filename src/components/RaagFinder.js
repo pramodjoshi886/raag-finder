@@ -1,28 +1,29 @@
 import React, { useState } from 'react';
 import '../components/RaagFinder.css';
-import SearchResult from './SearchResult'; 
-import SwarFinder from './SwarFinder'; 
-import searchRaagBySwars from './SearchBySwar'; 
+import SearchResult from './SearchResult';
+import SwarFinder from './SwarFinder';
+import searchRaagBySwars from './SearchBySwar';
+import { Tab, Tabs } from '@mui/material';
 
-const allNotes = ['S', 'r', 'R', 'g', 'G', 'm', 'M', 'P', 'd', 'D', 'n', 'N','S'];
+const allNotes = ['S', 'r', 'R', 'g', 'G', 'm', 'M', 'P', 'd', 'D', 'n', 'N', 'S'];
 
 function RaagaFinder() {
     const [selectedNotesAaroha, setSelectedNotesAaroha] = useState([]);
     const [selectedNotesAvaroh, setSelectedNotesAvaroh] = useState([]);
     const [searchResult, setSearchResult] = useState('');
     const [activePage, setActivePage] = useState('raagFinder');
+    const [activePageId, setActivePageId] = useState(0);
 
     // Function to handle search based on aaroha and avaroh
     const searchByAarohaAvaroh = () => {
         //const swars = [...selectedNotesAaroha, ...selectedNotesAvaroh];
-        const matchingRaagas = searchRaagBySwars(selectedNotesAaroha,selectedNotesAvaroh); // Call SearchBySwar with the selected swars
+        const matchingRaagas = searchRaagBySwars(selectedNotesAaroha, selectedNotesAvaroh); // Call SearchBySwar with the selected swars
         setSearchResult(matchingRaagas); // Set the result in the state
     };
 
     // Function to add or remove a note from aaroha or avaroh
     const [lastSelectedAaroha, setLastSelectedAaroha] = useState(null);
-    const [lastSelectedAvaroh, setLastSelectedAvaroh] = useState(null);
-    
+
     const toggleNote = (note, type) => {
         if (type === 'aaroha') {
             if (selectedNotesAaroha.includes(note)) {
@@ -56,7 +57,7 @@ function RaagaFinder() {
             }
         }
     };
-    
+
 
 
     // Function to clear all selected notes
@@ -73,7 +74,17 @@ function RaagaFinder() {
         <div className="container">
             <header>
                 <h1>Know Your Raaga</h1>
-                <nav>
+                <Tabs centered textColor="inherit"
+                    value={activePageId}
+                    onChange={(event, newValue) => {
+                        setActivePageId(newValue)
+                        handlePageToggle(newValue === 0 ? 'raagFinder' : 'swarFinder')
+                    }
+                    }>
+                    <Tab label="Raag Finder" />
+                    <Tab label="Swar Finder" />
+                </Tabs>
+                {/* <nav>
                     <ul>
                         <li className={activePage === 'raagFinder' ? 'active' : ''}>
                             <button onClick={() => handlePageToggle('raagFinder')}>Raag Finder</button>
@@ -82,7 +93,7 @@ function RaagaFinder() {
                             <button onClick={() => handlePageToggle('swarFinder')}>Swar Finder</button>
                         </li>
                     </ul>
-                </nav>
+                </nav> */}
             </header>
             <main>
                 {activePage === 'raagFinder' && (
@@ -94,7 +105,7 @@ function RaagaFinder() {
                                 <div className="notes-container">
                                     {/* Display selectable notes for Aaroha */}
                                     {allNotes.map(note => (
-                                        <div 
+                                        <div
                                             key={note}
                                             className={`note ${selectedNotesAaroha.includes(note) ? 'selected' : ''}`}
                                             onClick={() => toggleNote(note, 'aaroha')}
@@ -109,7 +120,7 @@ function RaagaFinder() {
                                 <div className="notes-container">
                                     {/* Display selectable notes for Avaroh in reverse order */}
                                     {allNotes.slice().reverse().map(note => (
-                                        <div 
+                                        <div
                                             key={note}
                                             className={`note ${selectedNotesAvaroh.includes(note) ? 'selected' : ''}`}
                                             onClick={() => toggleNote(note, 'avaroh')}
